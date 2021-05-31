@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    /* background: url('/media/cvs_homepage.jpg') no-repeat center center fixed; */
+    background: url('/media/dad_picture_cononley.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-position: 0px -100px;
+    color: #555;
+    font-family: 'Amatic SC';
+    font-size: 1.2em;
+}
+
+
+.btn-lg {
+    font-size: 1.5em;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.text-success {
+   color: #009973 !important;
+}
+
+.text-grey {
+    color: #476b6b !important;
+}
+
+.fixed-top-background{
+    background-color: whitesmoke;
+    min-height: 120px;
+}
+
+.no-underline, .no-underline:hover {
+    text-decoration: none;
+}
+
+.btn-success {
+   background-color: #009973 !important;
+}
+
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+@media (max-width: 904px) {
+    body {
+    background-position: 0px 0px;
+}
+}

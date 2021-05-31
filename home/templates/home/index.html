@@ -1,13 +1,35 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-<div class="container">
+<div class="container d-none d-xl-block">
     <div class="row">
-        <div class="col-7 my-auto">
-            <h4>
-                        <a href="" class="shop-now-button btn btn-lg ">Shop All Products</a>
-                    </h4>
+        <div class="col-12 my-auto">
+            <h2>
+                        <a href="" class="btn btn-lg">All Products</a>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 my-auto">
+            <h2>
+                        <a href="" class="btn btn-lg">Our Offers</a>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 my-auto">
+            <h2>
+                        <a href="" class="btn btn-lg">E-bike Hire</a>
+            </h2>
         </div>
     </div>
 </div>
