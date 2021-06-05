@@ -10,11 +10,27 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="overlay"></div>
+<div class="container-fluid">
     <div class="row">
-        <div class="col">
-            {{ products }}
+        <div class="col-12">
+            <h1 class="text-center mt-3"><strong>Products</strong></h1>
         </div>
+    </div>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-6 col-md-4 col-lg-3 mx-auto my-3">
+            <div class="card rounded border border-dark">
+                <img class="card-img-top mt-3" src="{{ product.image_url }}" alt="{{ product.name }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">£{{ product.price }}</p>
+                    <a href="#" class="btn btn-success mx-2">View Product</a>
+                    <a href="#" class="btn btn-success mx-2">Quick Add</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

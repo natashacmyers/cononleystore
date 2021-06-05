@@ -5,12 +5,22 @@ html {
 }
 
 body {
-    background: linear-gradient(rgba(88,129,99, 0.4), rgba(88,129,99, 0.4)), url('/media/shop_bg_image.jpg') no-repeat fixed;
+    background: linear-gradient(rgba(255,255,255, 0.2), rgba(255,255,255, 0.2)), url('/media/shop_bg_image.jpg') no-repeat fixed;
     background-size: 1700px 1100px;
     background-position: -40px -130px;
     color: #555;
     font-family: 'Amatic SC';
     font-size: 1.2em;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: #d3dbdb;
+	z-index: -1;
 }
 
 
@@ -33,6 +43,10 @@ body {
 
 .bg-grey {
     background-color: #476b6b !important;
+}
+
+.bg-light-grey {
+    background-color: rgb(202, 202, 202);
 }
 
 

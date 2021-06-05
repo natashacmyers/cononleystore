@@ -8,7 +8,7 @@ def all_products(request):
     """
     A view to show all products along with search queries
     """
-    
+   
     products = Product.objects.all()
 
     context = {
