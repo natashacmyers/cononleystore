@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    background: url('/media/shop_bg_image.jpg') no-repeat fixed;
+    background: linear-gradient(rgba(88,129,99, 0.4), rgba(88,129,99, 0.4)), url('/media/shop_bg_image.jpg') no-repeat fixed;
     background-size: 1700px 1100px;
     background-position: -40px -130px;
     color: #555;

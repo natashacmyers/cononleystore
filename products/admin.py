@@ -12,7 +12,8 @@ class ProductAdmin(admin.ModelAdmin):
         'sku',
     )
 
-    ordering = ('name',) # to do a reverse ordering just stick a minus infront of the word 'name'
+    ordering = ('name',) # to do a reverse ordering just stick a minus 
+                         # infront of the word 'name'
 
 
 class CategoryAdmin(admin.ModelAdmin):
