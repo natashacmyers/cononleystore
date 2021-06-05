@@ -5,14 +5,14 @@ html {
 }
 
 body {
-    /* background: url('/media/cvs_homepage.jpg') no-repeat center center fixed; */
-    background: url('/media/dad_picture_cononley.jpg') no-repeat center fixed;
-    background-size: cover;
-    background-position: 0px -100px;
+    background: url('/media/shop_bg_image.jpg') no-repeat fixed;
+    background-size: 1700px 1100px;
+    background-position: -40px -130px;
     color: #555;
     font-family: 'Amatic SC';
     font-size: 1.2em;
 }
+
 
 
 .btn-lg {
@@ -30,6 +30,12 @@ body {
 .text-grey {
     color: #476b6b !important;
 }
+
+.bg-grey {
+    background-color: #476b6b !important;
+}
+
+
 
 .fixed-top-background{
     background-color: whitesmoke;
