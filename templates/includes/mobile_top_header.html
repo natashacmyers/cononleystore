@@ -7,9 +7,9 @@
         </div>
     </a>
     <div class="dropdown-menu" aria-labelledby="mobile-search">
-        <form class="form" method="GET" action="">
+        <form class="form" method="GET" action="{% url 'products' %}">
             <div class="input-group">
-                <input class="form-control" type="text" name="q" placeholder="Search our site">
+                <input class="form-control" type="text" name="q" placeholder="Search All Products">
                 <div class="input-group-append">
                     <button class="form-control form-control btn btn-success" type="submit">
                         <span class="icon">
