@@ -16,12 +16,12 @@
                 Groceries
             </a>
             <div class="dropdown-menu" aria-labelledby="groceries-link">
-                <a href="" class="dropdown-item">Alcohol</a>
-                <a href="" class="dropdown-item">Bakery</a>
-                <a href="" class="dropdown-item">Dairy</a>
-                <a href="" class="dropdown-item">Deli</a>
-                <a href="" class="dropdown-item">Meats</a>
-                <a href="" class="dropdown-item">Tins and Jars</a>
+                <a href="{% url 'products' %}?category=alcohol" class="dropdown-item">Alcohol</a>
+                <a href="{% url 'products' %}?category=bakery" class="dropdown-item">Bakery</a>
+                <a href="{% url 'products' %}?category=dairy" class="dropdown-item">Dairy</a>
+                <a href="{% url 'products' %}?category=deli" class="dropdown-item">Deli</a>
+                <a href="{% url 'products' %}?category=meats" class="dropdown-item">Meats</a>
+                <a href="{% url 'products' %}?category=tins-and-jars" class="dropdown-item">Tins and Jars</a>
             </div>
         </li>
 
@@ -30,10 +30,10 @@
                 Household
             </a>
             <div class="dropdown-menu" aria-labelledby="household-link">
-                <a href="" class="dropdown-item">General Cleaning Products</a>
-                <a href="" class="dropdown-item">Suma Products</a>
-                <a href="" class="dropdown-item">Eco Products</a>
-                <a href="" class="dropdown-item">Refill Station</a>
+                <a href="{% url 'products' %}?category=general-cleaning" class="dropdown-item">General Cleaning Products</a>
+                <a href="{% url 'products' %}?category=suma" class="dropdown-item">Suma Products</a>
+                <a href="{% url 'products' %}?category=eco" class="dropdown-item">Eco Products</a>
+                <a href="{% url 'products' %}?category=refill-station" class="dropdown-item">Refill Station</a>
             </div>
         </li>
 
@@ -42,11 +42,8 @@
                 Cards
             </a>
             <div class="dropdown-menu" aria-labelledby="cards-link">
-                <a href="" class="dropdown-item">Birthdays</a>
-                <a href="" class="dropdown-item">Occasions</a>
-                <a href="" class="dropdown-item">Alex Clarke</a>
-                <a href="" class="dropdown-item">Cononley Art Club</a>
-                <a href="" class="dropdown-item">3D Sheep</a>
+                <a href="{% url 'products' %}?category=birthday-cards" class="dropdown-item">Birthdays</a>
+                <a href="{% url 'products' %}?category=occasion-cards" class="dropdown-item">Occasions</a>
             </div>
         </li>
     </ul>
