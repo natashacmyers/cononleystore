@@ -36,6 +36,10 @@ body {
     font-size: 1.5em;
 }
 
+.btt-link:hover {
+    cursor: pointer;
+}
+
 .text-black {
     color: #000 !important;
 }

@@ -4,6 +4,7 @@ from django.db.models import Q      # this allows search queries to work in
                                     # EITHER the title OR the description
                                     # product.objects.filter can't do this
 from .models import Product, Category
+from django.db.models.functions import Lower
 
 # Create your views here.
 
