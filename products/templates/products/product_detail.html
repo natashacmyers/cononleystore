@@ -13,8 +13,8 @@
 <div class="overlay"></div>
 <div class="container-fluid">
     <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-3">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 mt-5">
+                <div class="image-container w-75">
                         <a href="{{ product.image_url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
                         </a>
@@ -24,9 +24,16 @@
                 <div class="mt-4 d-flex justify-content-end">
                     <button>Back to Products</button>
                 </div>
-                <div class="product-details-container">
+                <div class="product-details-container my-auto">
                     <h2 class="my-3">{{ product.name }}</h2>
                     <h3 class="my-3">${{ product.price }}</h3>
+                    {% if product.category %}
+                        <p class="mb-3">
+                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                            </a>
+                        </p>
+                    {% endif %}
                     <p class="my-3">{{ product.description }}</p>
                     <button>Reviews?</button>
                     <button>Add to Bag</button>
