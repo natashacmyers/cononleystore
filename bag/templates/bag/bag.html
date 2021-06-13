@@ -11,14 +11,14 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container mb-2">
+    <div class="container pb-5">
         <div class="row mt-5">
             <div class="col text-center">      
                 <h1 class="">Shopping Bag</h1>
                 <hr>
             </div>
         </div>
-
+        {% if not bag_items %}
         <div class="row">
             <div class="col d-flex justify-content-end">
                  <a href="{% url 'products' %}" class="btn border rounded-0 border-2 border-secondary mx-5">
@@ -26,11 +26,76 @@
                     </a>
                 </div>
             </div> 
+        {% endif %}
         <div class="row">   
             <div class="col">         
                 {% if bag_items %}
-                    <div class="table-responsive rounded">
-                        {{ bag_items }}
+                    <div class="table-responsive rounded text-right">
+                         <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col" class="text-left">Product Info</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+
+                            {% for item in bag_items %}
+                                <tr>
+                                    <td class="p-3 w-25">
+                                        <img class="img-fluid border border-secondary" src="{{ item.product.image_url }}">
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.product.price }}</p>
+                                    </td>
+                                    <td class="py-3 w-25">
+                                        <p class="my-0">{{ item.quantity }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr class="border-top">
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                             
+                                <td>&nbsp;</td>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                                    <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                                    {% if free_delivery_delta > 0 %}
+                                        <p class="mb-1 text-danger">
+                                            You could get free delivery by spending just <strong>${{ free_delivery_delta }}</strong> more!
+                                        </p>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                
+                                <td>&nbsp;</td>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'products' %}" class="btn border rounded-0 border-secondary ">
+                                        <h5 class="mb-0">Keep Shopping</h5>   
+                                    </a>
+                                    <a href="" class="btn border rounded-0 border-secondary ml-3">
+                                        <h5 class="d-inline pr-2">Secure Checkout</h5>
+                                        <span class="icon">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 {% else %}
                     <h5 class="my-5 text-center">Your bag is empty.</h5>
