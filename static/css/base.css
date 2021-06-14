@@ -13,6 +13,7 @@ body {
     font-size: 1.2em;
 }
 
+
 @media only screen and (max-width: 900px) {
   body {
     background-position: 0px -1300px;  
@@ -36,7 +37,7 @@ body {
     font-size: 1.5em;
 }
 
-.btt-link:hover {
+.btt-link, .update-link, .remove-item {
     cursor: pointer;
 }
 
