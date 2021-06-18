@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Amatic+SC:wght@700&display=swap');
 
 html {
     height: 100%;
@@ -98,4 +98,22 @@ body {
     body {
     background-position: 0px 0px;
 }
+}
+
+/*---------- Toasts ---------*/
+
+.message-container {
+    font-family: 'Roboto';
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 9999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
 }
