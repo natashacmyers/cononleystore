@@ -4,6 +4,7 @@ from django.db.models import Q      # this allows search queries to work in
                                     # EITHER the title OR the description
                                     # product.objects.filter can't do this
 from .models import Product, Category
+from .forms import ProductForm
 from django.db.models.functions import Lower
 
 # Create your views here.
@@ -70,3 +71,14 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def add_product(request):
+    """ Add a product to the store """
+    form = ProductForm()
+    template = 'products/add_product.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
