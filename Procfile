@@ -1,0 +1,1 @@
+web: gunicorn cononley_store.wsgi:application
