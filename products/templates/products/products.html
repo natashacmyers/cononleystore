@@ -58,15 +58,14 @@
                             </a>
                         </p>
                     {% endif %}
-                    {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                        </small>
-                    {% endif %}
                     <a href="{% url 'product_detail' product.id %}" class="btn btn-success mx-2">View Product</a>
                     <a href="{% url 'quick_add' product.id %}" class="btn btn-success mx-2">Quick Add</a>
-                    
+                    {% if request.user.is_superuser %}
+                        <p class="mt-1">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </p>
+                    {% endif %}
                 </div>
             </div>
         </div>
