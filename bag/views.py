@@ -12,6 +12,23 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 
+def quick_add(request, item_id):
+    """ Quick add of single specified product to the shopping bag """
+    product = Product.objects.get(pk=item_id)
+    quantity = int(1)
+    bag = request.session.get('bag', {})
+
+    if item_id in list(bag.keys()):
+        bag[item_id] += quantity
+        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+    else:
+        bag[item_id] = quantity
+        messages.success(request, f'Added <strong>{product.name}</strong> to your bag')
+   
+    request.session['bag'] = bag
+    return redirect('products')
+
+
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
 

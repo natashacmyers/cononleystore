@@ -65,7 +65,7 @@
                         </small>
                     {% endif %}
                     <a href="{% url 'product_detail' product.id %}" class="btn btn-success mx-2">View Product</a>
-                    <a href="#" class="btn btn-success mx-2">Quick Add</a>
+                    <a href="{% url 'quick_add' product.id %}" class="btn btn-success mx-2">Quick Add</a>
                     
                 </div>
             </div>
