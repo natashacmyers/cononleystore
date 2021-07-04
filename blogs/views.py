@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Blog, Comment
-from .forms import BlogForm
+from .forms import BlogForm, CommentForm
 
 # Create your views here.
 
@@ -24,7 +24,7 @@ def all_blogs(request):
 
 @login_required
 def add_blog(request):
-    """ Add a blog to the store """
+    """ Add a blog """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -49,8 +49,31 @@ def add_blog(request):
 
 
 @login_required
+def add_comment(request):
+    """ Add a comment to a blog """
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added comment!')
+            return redirect(reverse('blogs'))
+        else:
+            messages.error(request, 'Failed to add comment. Please ensure the form is valid.')
+    else:
+        form = CommentForm()
+       
+    template = 'blogs/add_comment.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def edit_blog(request, blog_id):
-    """ Edit a blog in the store """
+    """ Edit a blog  """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))
@@ -78,6 +101,32 @@ def edit_blog(request, blog_id):
 
 
 @login_required
+def edit_comment(request, comment_id):
+    """ Edit a comment """
+   
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated comment!')
+            return redirect(reverse('blogs'))
+        else:
+            messages.error(request, 'Failed to update comment. Please ensure the form is valid.')
+    else:
+        form = CommentForm(instance=comment)
+        messages.info(request, f'You are editing a comment')
+
+    template = 'blogs/edit_comment.html'
+    context = {
+        'form': form,
+        'comment': comment,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def delete_blog(request, blog_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -87,4 +136,14 @@ def delete_blog(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
     blog.delete()
     messages.success(request, 'Blog deleted!')
+    return redirect(reverse('blogs'))
+
+
+@login_required
+def delete_comment(request, blog_id):
+
+    """ Delete a comment """
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    messages.success(request, 'Comment deleted!')
     return redirect(reverse('blogs'))
