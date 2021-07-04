@@ -48,7 +48,7 @@ def add_blog(request):
 
 
 @login_required
-def edit_blog(request, product_id):
+def edit_blog(request, blog_id):
     """ Edit a blog in the store """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
@@ -83,7 +83,7 @@ def delete_blog(request, blog_id):
         return redirect(reverse('home'))
 
     """ Delete a blog """
-    blog = get_object_or_404(Product, pk=blog_id)
+    blog = get_object_or_404(Blog, pk=blog_id)
     blog.delete()
     messages.success(request, 'Blog deleted!')
     return redirect(reverse('blogs'))
