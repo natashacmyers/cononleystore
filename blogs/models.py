@@ -21,7 +21,7 @@ class Comment(models.Model):
         'Blog', null=True, blank=True, on_delete=models.SET_NULL)
     user_profile = models.ForeignKey(
         UserProfile, null=True, blank=True, on_delete=models.SET_NULL,
-        related_name='comments')
+        related_name='blogs')
     comment_number = models.CharField(max_length=32, null=False, editable=False)
     description = models.TextField()
     datetime = datetime.datetime.now()

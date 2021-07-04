@@ -12,9 +12,10 @@ def all_blogs(request):
     A view to show all blogs along with search queries
     """
     blogs = Blog.objects.all()
-
+    comments = Comment.objects.all()
     context = {
         'blogs': blogs,
+        'comments': comments,
     }
 
     return render(request, 'blogs/blogs.html', context)
