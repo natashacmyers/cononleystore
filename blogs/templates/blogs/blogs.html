@@ -47,12 +47,12 @@
                         <div class="my-2 card bg-light rounded p-2 text-left">
                             <div class="border-bottom">
                                 <h5 class="d-inline"><i class="fas fa-user fa-sm"></i> {{comment.user_profile }}</h5>
-                                
+                                {% if request.user.lower == comment.user_profile.lower %}
                                 <small class="ml-3 ">
                                     <a href="{% url 'edit_comment' comment.id %}">Edit</a> | 
                                     <a class="text-danger" href="{% url 'delete_comment' comment.id %}">Delete</a>
                                 </small>
-                                
+                                {% endif %}
                             </div>
                             <h6>{{ comment.description }}</h6>
                             <h6 class="text-right">{{ comment.datetime }}</h6>
