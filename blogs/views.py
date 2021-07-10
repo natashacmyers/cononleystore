@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Blog, Comment
 from .forms import BlogForm, CommentForm
+from profiles.models import UserProfile
 
 # Create your views here.
 
@@ -16,6 +17,7 @@ def all_blogs(request):
     context = {
         'blogs': blogs,
         'comments': comments,
+        'on_blog_page': True,
     }
 
     return render(request, 'blogs/blogs.html', context)
@@ -43,18 +45,23 @@ def add_blog(request):
     template = 'blogs/add_blog.html'
     context = {
         'form': form,
+        'on_blog_page': True,
     }
 
     return render(request, template, context)
 
 
 @login_required
-def add_comment(request):
+def add_comment(request, blog_id):
     """ Add a comment to a blog """
-
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    blog = get_object_or_404(Blog, pk=blog_id)
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.user_profile = user_profile
+            form.blog = blog
             form.save()
             messages.success(request, 'Successfully added comment!')
             return redirect(reverse('blogs'))
@@ -62,10 +69,15 @@ def add_comment(request):
             messages.error(request, 'Failed to add comment. Please ensure the form is valid.')
     else:
         form = CommentForm()
-       
+   
     template = 'blogs/add_comment.html'
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    blog = get_object_or_404(Blog, pk=blog_id)
     context = {
         'form': form,
+        'on_blog_page': True,
+        'blog': blog,
+        'user_profile': user_profile,
     }
 
     return render(request, template, context)
@@ -95,6 +107,7 @@ def edit_blog(request, blog_id):
     context = {
         'form': form,
         'blog': blog,
+        'on_blog_page': True,
     }
 
     return render(request, template, context)
@@ -103,7 +116,6 @@ def edit_blog(request, blog_id):
 @login_required
 def edit_comment(request, comment_id):
     """ Edit a comment """
-   
     comment = get_object_or_404(Comment, pk=comment_id)
     if request.method == 'POST':
         form = CommentForm(request.POST, instance=comment)
@@ -121,6 +133,7 @@ def edit_comment(request, comment_id):
     context = {
         'form': form,
         'comment': comment,
+        'on_blog_page': True,
     }
 
     return render(request, template, context)

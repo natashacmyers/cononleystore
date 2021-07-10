@@ -15,8 +15,12 @@ class BlogAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
+    readonly_fields = (
+        'blog',
+        'user_profile',
+        'datetime',
+    )
     list_display = (
-        'comment_number',
         'blog',
         'user_profile',
         'description',
