@@ -15,7 +15,7 @@ body {
 
 @media only screen and (max-width: 1199px) and (min-width: 769px){
     body {
-        background-size: 120% 150%;
+        background-size: 100% 120%;
     }
 }
 
