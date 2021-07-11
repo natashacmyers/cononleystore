@@ -83,7 +83,8 @@ The following definitions has been used for this website:
 
 #### Information architecture
 
-The initial database used for this project is sqlite3. During production the database was changed at the deployment stage to PostgreSQL with Heroku as add-on.
+SQLite3 was used during development which is included in the default Django installation. Heroku Postgres is used in the production site.
+![Database Schema](media/database-schema.png)
 
 Databases have been setup in models.py of the following apps:
 
