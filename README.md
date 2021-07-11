@@ -1,13 +1,11 @@
+![Cononley Store Home Page](media/responsive-view-cvs.png)
+
 # Cononley Village Store
 Cononley Village Store is a website for a real village store in Cononley, a small village in North Yorkshire. The website sells all the products found in Cononley store, ranging from essentials to eco cleaning products. There is also a blog where the store owners provide updates of new products, closing times over the christmas period and other important pieces of information for the locals to view. Additionally, there is a link to their sister store where e-bikes are sold. This link is not part of the project, and is simply available to show the two sites would be related in real time. 
 
 The goal of the site is for users to be able to view products, add to bag, and checkout/pay for their shopping all online. This will be especially useful to elderly/less abled customers who may find visiting the store a challenge. The shopping experience is aimed to relfect that of the actual store. Rustic, unique, cosy and inviting. The store real store has a very villagey-feel to it and this has been mirrored throughout the site. 
 
 The users (customers) are able to purchase products add comments to blogs, whilst the owners (superusers) are able to modify and add products as well as post new blogs.
-
-![alt text][Cononley Village Store]
-
-[logo]: https://github.com/natashacmyers/cononley-store/blob/master/media/responsive-view-cvs.png?raw=true
 
 ## Table of Contents
 - [UX](#ux)
@@ -84,7 +82,7 @@ The following definitions has been used for this website:
 #### Information architecture
 
 SQLite3 was used during development which is included in the default Django installation. Heroku Postgres is used in the production site.
-![Database Schema](media/database-schema.png)
+![Database Schema](media/database-schema.PNG)
 
 Databases have been setup in models.py of the following apps:
 
@@ -168,7 +166,7 @@ Styling
 - [Google fonts](https://fonts.google.com/) is used for the style the font
 
 Framework, Libraries & API
-- [Django](https://www.djangoproject.com/ is used as main web framework for the website
+- [Django](https://www.djangoproject.com/) is used as main web framework for the website
 - [Django Crispyforms](https://django-crispy-forms.readthedocs.io/en/latest/#) is used for simplifying forms through Python
 - [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html) is used for user login and user registration
 - [Bootstrap](https://getbootstrap.com/) is used for its grid system and navigation bar
