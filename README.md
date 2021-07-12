@@ -68,6 +68,8 @@ This will be further explained in the next chapter. A summary of the included an
 |10. Login & registration pages |
 |11. Profile page |
 
+Ideally, with more time I would improve the repsonsivity of the site layout-wise.
+
 ### Structure Plane
 
 The structure plane defines the information architecture and interaction design with the user. 
