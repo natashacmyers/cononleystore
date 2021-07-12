@@ -111,10 +111,9 @@ More about the Django database models can be found [here](https://docs.djangopro
 ### Skeleton Plane
 The skeleton plane defines a basic visual design of the website through, for example, a wireframe.  
 The wireframes for this project are made with Balsamiq can be downloaded from the following link:
-
-- [Wireframe - Desktop version]()
-- [Wireframe - Tablet version]()
-- [Wireframe - Mobile version]()
+The desktop and tablet views were combined in wireframes as views were meant to be the same.
+- [Wireframe - Desktop/Tablet version](media/wireframes/desktop-and-tablet-wireframes.pdf)
+- [Wireframe - Mobile version](media/wireframes/mobile-wireframes.pdf)
 
 ### Surface Plane
 The surface plane defines the appearance of the website. This website needs to attract and encourage users to focus on the website's content.
@@ -193,7 +192,7 @@ Testing
 - [Pep8](http://pep8online.com/) is used to validate the Python code
 
 ## Testing
-The test procedures and the key issues of the tests are written in the file[TEST.md]().
+The test procedures and the key issues of the tests are written in the file [TEST.md](TEST.md).
 
 
 ## Deployment
