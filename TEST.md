@@ -73,6 +73,81 @@
   - Opera
   - Safari
 
+## Code Validation
+
+### W3C Markup Validator
+- No errors or warnings were found on any html documentation
+
+### W3C CSS Validator
+- No manual coded related errors or warnings were found on any css documentation
+
+#### JavaScript
+###### [JSHint](https://jshint.com/) used to check JavaScript syntax.
+No warnings with Javascript files aside from "'template literal syntax' is only available in ES6"
+
+#### Python
+###### [ExtendsClass](https://extendsclass.com/python-tester.html) Python Syntax Checker used to check all python files syntax
+
+- **Bag App Syntax Check**
+    - admin.py: Passed
+    - apps.py: Passed 
+    - contexts.py: Passed
+    - models.py: Passed
+    - urls.py: Passed
+    - views.py: Passed
+
+- **Blogs App Syntax Check**
+    - admin.py: Passed
+    - apps.py: Passed 
+    - forms.py: Passed
+    - models.py: Passed
+    - urls.py: Passed
+    - views.py: Passed
+
+- **Checkout App Syntax Check**
+    - admin.py: Passed
+    - apps.py: Passed 
+    - forms.py: Passed
+    - signals.py: Passed
+    - models.py: Passed
+    - urls.py: Passed
+    - views.py: Passed
+    - webhook_handler.py: 1 error regarding f'strings
+    - webhooks.py: Passed
+
+- **Cononley Store App Syntax Check**
+    - asgi.py: Passed
+    - settings.py: 1 error regarding f'strings
+    - urls.py: Passed
+    - wsgi.py: Passed
+
+- **Home App Syntax Check**
+    - admin.py: Passed
+    - apps.py: Passed
+    - models.py: Passed
+    - tests.py: Passed
+    - urls.py: Passed
+    - views.py: Passed
+
+- **Products App Syntax Check**
+    - admin.py: Passed
+    - apps.py: Passed
+    - forms.py: 1 error regarding f'strings
+    - models.py: Passed
+    - tests.py: Passed
+    - urls.py: Passed
+    - views.py: 1 error regarding f'strings
+
+- **Products App Syntax Check**
+    - admin.py: Passed
+    - apps.py: Passed
+    - forms.py: Passed
+    - models.py: Passed
+    - tests.py: Passed
+    - urls.py: Passed
+    - views.py: 1 error regarding syntax
+
+
 ## Known Bugs & Issues
 * UX is not perfect - ran out of time. Ideally I would want the background to scale seamlessly and I would make some buttons on mobile device placed in a more UX friendly way.
 * 
